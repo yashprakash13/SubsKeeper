@@ -1,0 +1,7 @@
+package tech.pcreate.subscriptionkeeper.BaseViewPresenter;
+
+public interface BaseView<T> {
+
+    void setPresenter(T presenter);
+
+}

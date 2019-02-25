@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tech.pcreate.subscriptionkeeper">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".expenses.MyExpensesActivity"
+            android:label="@string/my_expenses"
+            android:parentActivityName=".subscriptions.SubsListActivity"/>
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName=".subscriptions.SubsListActivity"></activity>
+        <activity
+            android:name=".newSubscription.NewSubActivity"
+            android:parentActivityName=".subscriptions.SubsListActivity" />
+        <activity
+            android:name=".subscriptions.SubsListActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".backgroundJobs.CheckForDueDateJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".reminders.ReminderNotification" />
+
+        <uses-library
+            android:name="android.test.runner"
+            android:required="false" />
+    </application>
+
+</manifest>

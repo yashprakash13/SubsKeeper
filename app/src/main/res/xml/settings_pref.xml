@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:icon="@drawable/reminder_setting_icon"
+        android:title="@string/reminder_text"
+        android:summary="@string/reminder_text_summary"
+        android:defaultValue="true"
+        android:key="@string/scheduler_key"/>
+
+</PreferenceScreen>
